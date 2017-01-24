@@ -3,10 +3,10 @@ package math;
 /**
  * Created by lancer on 2017/1/23.
  */
-public class util {
+public class Util {
     public static void main(String[] args) {
         System.out.println(abs(-5.5));
-        System.out.println(isPrime(3));
+        System.out.println(isPrime(113));
     }
 
     public static int abs(int x) {
