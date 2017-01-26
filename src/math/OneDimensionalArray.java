@@ -5,6 +5,32 @@ package math;
  */
 public class OneDimensionalArray {
 
+    public static void main(String[] args) {
+        OneDimensionalArray obj = new OneDimensionalArray();
+
+        int[] arr = {99, 1, 2, 3, 4, 5, 6, 7, 8, 9, 20, 13, 15, 45};
+        System.out.println("getMax = " + obj.getMax(arr));
+
+        System.out.println("getAverage = " + obj.getAverage(arr));
+
+        int[] copyArray = obj.copyArray(arr);
+        printArray(copyArray);
+
+        int[] reverse = obj.reverse(arr);
+        printArray(reverse);
+
+        int[][] a = {
+                {1, 2, 3,},
+                {4, 5, 6,}
+        };
+        int[][] b = {
+                {1, 2, 3,},
+                {4, 5, 6,}
+        };
+        int[][] multiplied = obj.multiplied(a, b);
+        printArray(multiplied);
+    }
+
     /**
      * 获取数组中的最大值
      *
@@ -83,6 +109,42 @@ public class OneDimensionalArray {
             }
         }
         return c;
+    }
+
+    /**
+     * 打印一唯数组到控制台
+     *
+     * @param arr
+     */
+    public static void printArray(int[] arr) {
+        System.out.print("[");
+        for (int i = 0; i < arr.length; i++) {
+            if (i != arr.length - 1) {
+                System.out.print(arr[i] + ",");
+            } else {
+                System.out.println(arr[i] + "]");
+            }
+        }
+    }
+
+    /**
+     * 打印二维数组到控制台
+     *
+     * @param arr
+     */
+    public static void printArray(int[][] arr) {
+        System.out.println("{");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("\t{");
+            for (int j = 0; j < arr[i].length; j++) {
+                if (j != arr[i].length - 1) {
+                    System.out.print(arr[i][j] + ",");
+                } else {
+                    System.out.println(arr[i][j] + "}");
+                }
+            }
+        }
+        System.out.println("}");
     }
 
 }
