@@ -65,13 +65,24 @@ public class OneDimensionalArray {
     }
 
     /**
-     * TODO 两个矩阵相乘
+     * 矩阵相乘（方阵）
      *
-     * @param arr
+     * @param a
+     * @param b
      * @return
      */
-    public int[] multiplied(int[] a, int[] b) {
-        return null;
+    public int[][] multiplied(int[][] a, int[][] b) {
+        int N = a.length;
+        int[][] c = new int[N][N];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                for (int k = 0; k < N; k++) {
+                    // 计算行i和列j的点乘
+                    c[i][j] += a[i][k] * b[j][k];
+                }
+            }
+        }
+        return c;
     }
 
 }
