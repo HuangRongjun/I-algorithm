@@ -7,6 +7,8 @@ public class Util {
     public static void main(String[] args) {
         System.out.println(abs(-5.5));
         System.out.println(isPrime(113));
+        System.out.println(sqrt(2));
+        System.out.println(Math.sqrt(2));
     }
 
     public static int abs(int x) {
