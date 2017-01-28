@@ -58,5 +58,19 @@ public class Util {
         return t;
     }
 
+    /**
+     * 计算调和级数
+     *
+     * @param n
+     * @return
+     */
+    public static double H(int n) {
+        double sum = 0.0;
+        for (int i = 1; i <= n; i++) {
+            sum += 1 / i;
+        }
+        return sum;
+    }
+
 }
 
