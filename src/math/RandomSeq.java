@@ -31,5 +31,4 @@ public class RandomSeq {
             StdOut.printf("%.2f\n", x);
         }
     }
-
 }
