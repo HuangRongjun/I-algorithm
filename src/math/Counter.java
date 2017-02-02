@@ -36,12 +36,12 @@ public class Counter implements Comparable<Counter> {
     private int count = 0;         // current value
 
     /**
-     * Initializes a new counter starting at 0, with the given id.
+     * Initializes a new counter starting at 0, with the given name.
      *
-     * @param id the name of the counter
+     * @param name the name of the counter
      */
-    public Counter(String id) {
-        name = id;
+    public Counter(String name) {
+        this.name = name;
     }
 
     /**
