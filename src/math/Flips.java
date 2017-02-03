@@ -23,6 +23,25 @@ public class Flips {
         StdOut.println(heads);
         StdOut.println(tails);
         int d = heads.tally() - tails.tally();
-        StdOut.println("delta : " + Math.abs(d));
+        if (d == 0) {
+            StdOut.println("Tie");
+        } else {
+            StdOut.println(max(heads, tails) + " wins");
+        }
+    }
+
+    /**
+     * 将对象作为参数 & 返回值的例子
+     *
+     * @param x
+     * @param y
+     * @return
+     */
+    public static Counter max(Counter x, Counter y) {
+        if (x.tally() > y.tally()) {
+            return x;
+        } else {
+            return y;
+        }
     }
 }
