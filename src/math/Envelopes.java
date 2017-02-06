@@ -9,13 +9,12 @@ import util.StdRandom;
 public class Envelopes {
     public static void main(String[] args) {
         double total = 10;
-        int num = 8;
+        int num = 5;
         double min = 0.01;
         for (int i = 1; i < num; i++) {
-            //随机安全上线值待改进
+            // 随机安全上限值
             double max = (total - (num - i) * min) / (num - i);
-            //TODO 随机获取钱的算法待改进
-            double money = StdRandom.uniform(min, max);
+            double money = StdRandom.uniform(min * 100, max * 100) / 100;
             total -= money;
             StdOut.println(String.format("第 %d 个红包，%f 元，余额 %f 元", i, money, total));
         }
