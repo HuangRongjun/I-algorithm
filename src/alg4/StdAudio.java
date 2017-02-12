@@ -2,7 +2,7 @@
  *  Compilation:  javac StdAudio.java
  *  Execution:    java StdAudio
  *  Dependencies: none
- *  
+ *
  *  Simple library for reading, writing, and manipulating .wav files.
  *
  *
@@ -39,22 +39,22 @@ import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 /**
- *  <i>Standard audio</i>. This class provides a basic capability for
- *  creating, reading, and saving audio. 
- *  <p>
- *  The audio format uses a sampling rate of 44,100 (CD quality audio), 16-bit, monaural.
+ * <i>Standard audio</i>. This class provides a basic capability for
+ * creating, reading, and saving audio.
+ * <p>
+ * The audio format uses a sampling rate of 44,100 (CD quality audio), 16-bit, monaural.
+ * <p>
+ * <p>
+ * For additional documentation, see <a href="http://introcs.cs.princeton.edu/15inout">Section 1.5</a> of
+ * <i>Computer Science: An Interdisciplinary Approach</i> by Robert Sedgewick and Kevin Wayne.
  *
- *  <p>
- *  For additional documentation, see <a href="http://introcs.cs.princeton.edu/15inout">Section 1.5</a> of
- *  <i>Computer Science: An Interdisciplinary Approach</i> by Robert Sedgewick and Kevin Wayne.
- *
- *  @author Robert Sedgewick
- *  @author Kevin Wayne
+ * @author Robert Sedgewick
+ * @author Kevin Wayne
  */
 public final class StdAudio {
 
     /**
-     *  The sample rate - 44,100 Hz for CD quality audio.
+     * The sample rate - 44,100 Hz for CD quality audio.
      */
     public static final int SAMPLE_RATE = 44100;
 
@@ -68,13 +68,13 @@ public final class StdAudio {
     private static byte[] buffer;         // our internal buffer
     private static int bufferSize = 0;    // number of samples currently in internal buffer
 
-    private StdAudio() {
-        // can not instantiate
-    }
-   
     // static initializer
     static {
         init();
+    }
+
+    private StdAudio() {
+        // can not instantiate
     }
 
     // open up an audio stream
@@ -86,13 +86,12 @@ public final class StdAudio {
 
             line = (SourceDataLine) AudioSystem.getLine(info);
             line.open(format, SAMPLE_BUFFER_SIZE * BYTES_PER_SAMPLE);
-            
+
             // the internal buffer is a fraction of the actual buffer size, this choice is arbitrary
             // it gets divided because we can't expect the buffered data to line up exactly with when
             // the sound card decides to push out its samples.
-            buffer = new byte[SAMPLE_BUFFER_SIZE * BYTES_PER_SAMPLE/3];
-        }
-        catch (LineUnavailableException e) {
+            buffer = new byte[SAMPLE_BUFFER_SIZE * BYTES_PER_SAMPLE / 3];
+        } catch (LineUnavailableException e) {
             System.out.println(e.getMessage());
         }
 
@@ -108,12 +107,12 @@ public final class StdAudio {
         line.drain();
         line.stop();
     }
-    
+
     /**
      * Writes one sample (between -1.0 and +1.0) to standard audio.
      * If the sample is outside the range, it will be clipped.
      *
-     * @param  sample the sample to play
+     * @param sample the sample to play
      * @throws IllegalArgumentException if the sample is {@code Double.NaN}
      */
     public static void play(double sample) {
@@ -139,7 +138,7 @@ public final class StdAudio {
      * Writes the array of samples (between -1.0 and +1.0) to standard audio.
      * If a sample is outside the range, it will be clipped.
      *
-     * @param  samples the array of samples to play
+     * @param samples the array of samples to play
      * @throws IllegalArgumentException if any sample is {@code Double.NaN}
      * @throws IllegalArgumentException if {@code samples} is {@code null}
      */
@@ -154,15 +153,15 @@ public final class StdAudio {
      * Reads audio samples from a file (in .wav or .au format) and returns
      * them as a double array with values between -1.0 and +1.0.
      *
-     * @param  filename the name of the audio file
+     * @param filename the name of the audio file
      * @return the array of samples
      */
     public static double[] read(String filename) {
         byte[] data = readByte(filename);
         int n = data.length;
-        double[] d = new double[n/2];
-        for (int i = 0; i < n/2; i++) {
-            d[i] = ((short) (((data[2*i+1] & 0xFF) << 8) + (data[2*i] & 0xFF))) / ((double) MAX_16_BIT);
+        double[] d = new double[n / 2];
+        for (int i = 0; i < n / 2; i++) {
+            d[i] = ((short) (((data[2 * i + 1] & 0xFF) << 8) + (data[2 * i] & 0xFF))) / ((double) MAX_16_BIT);
         }
         return d;
     }
@@ -181,7 +180,7 @@ public final class StdAudio {
                 data = new byte[bytesToRead];
                 int bytesRead = ais.read(data);
                 if (bytesToRead != bytesRead)
-                    throw new IllegalStateException("read only " + bytesRead + " of " + bytesToRead + " bytes"); 
+                    throw new IllegalStateException("read only " + bytesRead + " of " + bytesToRead + " bytes");
             }
 
             // try to read from URL
@@ -192,14 +191,11 @@ public final class StdAudio {
                 data = new byte[bytesToRead];
                 int bytesRead = ais.read(data);
                 if (bytesToRead != bytesRead)
-                    throw new IllegalStateException("read only " + bytesRead + " of " + bytesToRead + " bytes"); 
+                    throw new IllegalStateException("read only " + bytesRead + " of " + bytesToRead + " bytes");
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             throw new IllegalArgumentException("could not read '" + filename + "'", e);
-        }
-
-        catch (UnsupportedAudioFileException e) {
+        } catch (UnsupportedAudioFileException e) {
             throw new IllegalArgumentException("unsupported audio format: '" + filename + "'", e);
         }
 
@@ -209,8 +205,8 @@ public final class StdAudio {
     /**
      * Saves the double array as an audio file (using .wav or .au format).
      *
-     * @param  filename the name of the audio file
-     * @param  samples the array of samples
+     * @param filename the name of the audio file
+     * @param samples  the array of samples
      * @throws IllegalArgumentException if unable to save {@code filename}
      * @throws IllegalArgumentException if {@code samples} is {@code null}
      */
@@ -225,8 +221,8 @@ public final class StdAudio {
         byte[] data = new byte[2 * samples.length];
         for (int i = 0; i < samples.length; i++) {
             int temp = (short) (samples[i] * MAX_16_BIT);
-            data[2*i + 0] = (byte) temp;
-            data[2*i + 1] = (byte) (temp >> 8);
+            data[2 * i + 0] = (byte) temp;
+            data[2 * i + 1] = (byte) (temp >> 8);
         }
 
         // now save the file
@@ -235,19 +231,15 @@ public final class StdAudio {
             AudioInputStream ais = new AudioInputStream(bais, format, samples.length);
             if (filename.endsWith(".wav") || filename.endsWith(".WAV")) {
                 AudioSystem.write(ais, AudioFileFormat.Type.WAVE, new File(filename));
-            }
-            else if (filename.endsWith(".au") || filename.endsWith(".AU")) {
+            } else if (filename.endsWith(".au") || filename.endsWith(".AU")) {
                 AudioSystem.write(ais, AudioFileFormat.Type.AU, new File(filename));
-            }
-            else {
+            } else {
                 throw new IllegalArgumentException("unsupported audio format: '" + filename + "'");
             }
-        }
-        catch (IOException ioe) {
+        } catch (IOException ioe) {
             throw new IllegalArgumentException("unable to save file '" + filename + "'", ioe);
         }
     }
-
 
 
     /**
@@ -276,7 +268,7 @@ public final class StdAudio {
                 public void run() {
                     stream(filename);
                 }
-           }).start();
+            }).start();
         }
 
         // let's try Applet.newAudioClip() instead
@@ -298,9 +290,8 @@ public final class StdAudio {
         URL url = null;
         try {
             File file = new File(filename);
-            if(file.canRead()) url = file.toURI().toURL();
-        }
-        catch (MalformedURLException e) {
+            if (file.canRead()) url = file.toURI().toURL();
+        } catch (MalformedURLException e) {
             throw new IllegalArgumentException("could not play '" + filename + "'", e);
         }
 
@@ -333,17 +324,13 @@ public final class StdAudio {
             while ((count = ais.read(samples, 0, BUFFER_SIZE)) != -1) {
                 line.write(samples, 0, count);
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        catch (UnsupportedAudioFileException e) {
+        } catch (UnsupportedAudioFileException e) {
             e.printStackTrace();
-        }
-        catch (LineUnavailableException e) {
+        } catch (LineUnavailableException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             if (line != null) {
                 line.drain();
                 line.close();
@@ -367,28 +354,25 @@ public final class StdAudio {
             AudioInputStream ais = AudioSystem.getAudioInputStream(is);
             clip.open(ais);
             clip.loop(Clip.LOOP_CONTINUOUSLY);
-        }
-        catch (UnsupportedAudioFileException e) {
+        } catch (UnsupportedAudioFileException e) {
             throw new IllegalArgumentException("unsupported audio format: '" + filename + "'", e);
-        }
-        catch (LineUnavailableException e) {
+        } catch (LineUnavailableException e) {
             throw new IllegalArgumentException("could not play '" + filename + "'", e);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             throw new IllegalArgumentException("could not play '" + filename + "'", e);
         }
     }
 
 
-   /***************************************************************************
-    * Unit tests {@code StdAudio}.
-    ***************************************************************************/
+    /***************************************************************************
+     * Unit tests {@code StdAudio}.
+     ***************************************************************************/
 
     // create a note (sine wave) of the given frequency (Hz), for the given
     // duration (seconds) scaled to the given volume (amplitude)
     private static double[] note(double hz, double duration, double amplitude) {
         int n = (int) (StdAudio.SAMPLE_RATE * duration);
-        double[] a = new double[n+1];
+        double[] a = new double[n + 1];
         for (int i = 0; i <= n; i++)
             a[i] = amplitude * Math.sin(2 * Math.PI * i * hz / StdAudio.SAMPLE_RATE);
         return a;
@@ -405,15 +389,15 @@ public final class StdAudio {
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
-        
+
         // 440 Hz for 1 sec
         double freq = 440.0;
         for (int i = 0; i <= StdAudio.SAMPLE_RATE; i++) {
-            StdAudio.play(0.5 * Math.sin(2*Math.PI * freq * i / StdAudio.SAMPLE_RATE));
+            StdAudio.play(0.5 * Math.sin(2 * Math.PI * freq * i / StdAudio.SAMPLE_RATE));
         }
-        
+
         // scale increments
-        int[] steps = { 0, 2, 4, 5, 7, 9, 11, 12 };
+        int[] steps = {0, 2, 4, 5, 7, 9, 11, 12};
         for (int i = 0; i < steps.length; i++) {
             double hz = 440.0 * Math.pow(2, steps[i] / 12.0);
             StdAudio.play(note(hz, 1.0, 0.5));
@@ -422,7 +406,7 @@ public final class StdAudio {
 
         // need to call this in non-interactive stuff so the program doesn't terminate
         // until all the sound leaves the speaker.
-        StdAudio.close(); 
+        StdAudio.close();
     }
 }
 

@@ -7,6 +7,7 @@ public class Matrix {
 
     /**
      * 点向量相乘
+     *
      * @param x
      * @param y
      * @return

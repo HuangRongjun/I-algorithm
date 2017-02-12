@@ -33,6 +33,42 @@ public class OneDimensionalArray {
     }
 
     /**
+     * 打印一唯数组到控制台
+     *
+     * @param arr
+     */
+    public static void printArray(int[] arr) {
+        System.out.print("[");
+        for (int i = 0; i < arr.length; i++) {
+            if (i != arr.length - 1) {
+                System.out.print(arr[i] + ",");
+            } else {
+                System.out.println(arr[i] + "]");
+            }
+        }
+    }
+
+    /**
+     * 打印二维数组到控制台
+     *
+     * @param arr
+     */
+    public static void printArray(int[][] arr) {
+        System.out.println("{");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("\t{");
+            for (int j = 0; j < arr[i].length; j++) {
+                if (j != arr[i].length - 1) {
+                    System.out.print(arr[i][j] + ",");
+                } else {
+                    System.out.println(arr[i][j] + "}");
+                }
+            }
+        }
+        System.out.println("}");
+    }
+
+    /**
      * 获取数组中的最大值
      *
      * @param arr
@@ -110,42 +146,6 @@ public class OneDimensionalArray {
             }
         }
         return c;
-    }
-
-    /**
-     * 打印一唯数组到控制台
-     *
-     * @param arr
-     */
-    public static void printArray(int[] arr) {
-        System.out.print("[");
-        for (int i = 0; i < arr.length; i++) {
-            if (i != arr.length - 1) {
-                System.out.print(arr[i] + ",");
-            } else {
-                System.out.println(arr[i] + "]");
-            }
-        }
-    }
-
-    /**
-     * 打印二维数组到控制台
-     *
-     * @param arr
-     */
-    public static void printArray(int[][] arr) {
-        System.out.println("{");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print("\t{");
-            for (int j = 0; j < arr[i].length; j++) {
-                if (j != arr[i].length - 1) {
-                    System.out.print(arr[i][j] + ",");
-                } else {
-                    System.out.println(arr[i][j] + "}");
-                }
-            }
-        }
-        System.out.println("}");
     }
 
 }
