@@ -1,7 +1,7 @@
 package math;
 
 /**
- * Created by lancer on 2017/1/23.
+ * Created by iCrazyTeam on 2017/1/23.
  */
 public class Util {
     public static void main(String[] args) {

@@ -25,7 +25,7 @@ import util.StdRandom;
 /**
  * The {@code Counter} class is a mutable data type to encapsulate a counter.
  * <p>
- * Created by lancer on 2017/1/31.
+ * Created by iCrazyTeam on 2017/1/31.
  *
  * @author Robert Sedgewick
  * @author Kevin Wayne

@@ -3,7 +3,7 @@ package math;
 import java.util.Arrays;
 
 /**
- * Created by lancer on 2017/1/24.
+ * Created by iCrazyTeam on 2017/1/24.
  */
 public class BinarySearch {
     public static void main(String[] args) {

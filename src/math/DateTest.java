@@ -3,7 +3,7 @@ package math;
 import util.StdOut;
 
 /**
- * Created by lancer on 2017/2/19.
+ * Created by iCrazyTeam on 2017/2/19.
  */
 public class DateTest {
     public static void main(String[] args){

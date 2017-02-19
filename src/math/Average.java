@@ -19,7 +19,7 @@ import util.StdOut;
  * Note [Ctrl-d] signifies the end of file on Unix.
  * On windows use [Ctrl-z].
  * <p>
- * Created by lancer on 2017/1/30.
+ * Created by iCrazyTeam on 2017/1/30.
  */
 public class Average {
     public static void main(String[] args) {

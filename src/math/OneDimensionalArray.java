@@ -1,7 +1,7 @@
 package math;
 
 /**
- * Created by lancer on 2017/1/25.
+ * Created by iCrazyTeam on 2017/1/25.
  * TODO 该类需要改进，使用范型兼容所有类型的数组使用
  */
 public class OneDimensionalArray {

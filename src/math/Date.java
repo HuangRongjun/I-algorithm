@@ -1,7 +1,7 @@
 package math;
 
 /**
- * Created by lancer on 2017/2/19.
+ * Created by iCrazyTeam on 2017/2/19.
  */
 public class Date {
     public int value;

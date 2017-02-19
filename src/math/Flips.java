@@ -6,7 +6,7 @@ import util.StdRandom;
 /**
  * Counter测试用例，用于模拟T次投硬币
  * <p>
- * Created by lancer on 2017/2/2.
+ * Created by iCrazyTeam on 2017/2/2.
  */
 public class Flips {
     public static void main(String[] args) {

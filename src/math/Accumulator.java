@@ -3,7 +3,7 @@ package math;
 /**
  * 计算一组数据的实时平均值
  * <p>
- * Created by lancer on 2017/2/19.
+ * Created by iCrazyTeam on 2017/2/19.
  */
 public class Accumulator {
     private double total;

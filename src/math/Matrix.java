@@ -1,7 +1,7 @@
 package math;
 
 /**
- * Created by lancer on 2017/1/31.
+ * Created by iCrazyTeam on 2017/1/31.
  */
 public class Matrix {
 

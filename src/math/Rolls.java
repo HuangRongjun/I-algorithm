@@ -8,7 +8,7 @@ import util.StdRandom;
  * <p>
  * 主要用于测试对象数组在移动的时候主要是操作 引用 ，而非对象本身
  * </p>
- * Created by lancer on 2017/2/4.
+ * Created by iCrazyTeam on 2017/2/4.
  */
 public class Rolls {
     public static void main(String[] args) {

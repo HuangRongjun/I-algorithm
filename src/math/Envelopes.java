@@ -4,7 +4,7 @@ import util.StdOut;
 import util.StdRandom;
 
 /**
- * Created by lancer on 2017/2/5.
+ * Created by iCrazyTeam on 2017/2/5.
  */
 public class Envelopes {
     public static void main(String[] args) {

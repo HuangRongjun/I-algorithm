@@ -17,7 +17,7 @@ import util.StdRandom;
  * 178.50
  * 169.79
  * <p>
- * Created by lancer on 2017/1/29.
+ * Created by iCrazyTeam on 2017/1/29.
  */
 public class RandomSeq {
     public static void main(String[] args) {
