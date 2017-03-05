@@ -10,7 +10,7 @@
 
 package alg4;
 
-import java.awt.Color;
+import java.awt.*;
 
 /**
  * The {@code Particle} class represents a particle moving in the unit box,

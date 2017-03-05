@@ -9,8 +9,8 @@
 package alg4;
 
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /*
