@@ -3,7 +3,7 @@ package math;
 import util.StdDraw;
 
 /**
- * Created by sierra on 2017/1/30.
+ * Created by iCrazyTeam on 2017/1/30.
  */
 public class Draw {
     public static void main(String[] args) {
