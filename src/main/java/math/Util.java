@@ -1,5 +1,7 @@
 package math;
 
+import java.util.Random;
+
 /**
  * Created by iCrazyTeam on 2017/1/23.
  */
@@ -70,6 +72,19 @@ public class Util {
             sum += 1 / i;
         }
         return sum;
+    }
+
+    /**
+     * 获取指定范围的随机数
+     *
+     * @param min
+     * @param max
+     * @return
+     */
+    public static int random(int min, int max) {
+        Random random = new Random();
+        int result = random.nextInt(max + 1 - min) + min;
+        return result;
     }
 
 }
