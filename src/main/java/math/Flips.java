@@ -9,6 +9,7 @@ import util.StdRandom;
  * Created by iCrazyTeam on 2017/2/2.
  */
 public class Flips {
+
     public static void main(String[] args) {
         int T = Integer.parseInt(args[0]);
         Counter heads = new Counter("heads");
