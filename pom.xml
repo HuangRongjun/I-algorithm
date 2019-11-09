@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.itjun.algorithms</groupId>
-    <artifactId>Algorithms</artifactId>
+    <artifactId>iAlgorithms</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
