@@ -5,12 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.itjun</groupId>
-    <artifactId>algorithms-4th</artifactId>
+    <artifactId>algorithms-learning</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
+
     <properties>
+        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <dependencies>
